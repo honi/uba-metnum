@@ -8,3 +8,4 @@ Ciencias de la Computación - FCEN - UBA\
 - Prácticas
 
   - [Práctica 1](prácticas/p01): Elementos de Álgebra Lineal
+  - [Práctica 2](prácticas/p02): Eliminación Gaussiana, Factorización LU, Normas y Número de Condición
