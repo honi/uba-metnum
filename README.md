@@ -11,3 +11,4 @@ Ciencias de la Computación - FCEN - UBA\
   - [Práctica 2](prácticas/p02): Eliminación Gaussiana, Factorización LU, Normas y Número de condición
   - [Práctica 3](prácticas/p03): Matrices simétricas definidas positivas, Factorización de Cholesky
   - [Práctica 4](prácticas/p04): Matrices ortogonales, Factorización QR
+  - [Práctica 5](prácticas/p05): Autovalores y Autovectores, Método de la potencia
