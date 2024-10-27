@@ -13,3 +13,4 @@ Ciencias de la Computación - FCEN - UBA\
   - [Práctica 4](prácticas/p04): Matrices ortogonales, Factorización QR
   - [Práctica 5](prácticas/p05): Autovalores y Autovectores, Método de la potencia
   - [Práctica 6](prácticas/p06): Descomposición en Valores Singulares (SVD)
+  - [Práctica 7](prácticas/p07): Cuadrados Mínimos
