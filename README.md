@@ -15,3 +15,8 @@ Ciencias de la Computación - FCEN - UBA\
   - [Práctica 6](prácticas/p06): Descomposición en Valores Singulares (SVD)
   - [Práctica 7](prácticas/p07): Cuadrados Mínimos
   - [Práctica 8](prácticas/p08): Métodos Iterativos
+
+- Parciales
+
+  - [1er parcial](parciales/MetNum-2024-2C-1P.pdf)
+  - [2do parcial](parciales/MetNum-2024-2C-2P.pdf)
