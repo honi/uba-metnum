@@ -274,4 +274,4 @@ Las estrategias de pivoteo no solo permiten realizar la Eliminación Gaussiana c
 
 El método de Eliminación Gaussiana tiene una complejidad de $O(n^3)$ operaciones elementales. Dado que triangulamos la matriz del sistema junto al término independiente, si ahora queremos reutilizar la misma matriz pero con otro término independiente necesitamos volver a pagar el mismo costo cúbico.
 
-Cuando tenemos un sistema que vamos a necesitar resolverlo muchas veces para distintos términos independientes, es más eficiente encontrar una descomposición de la matriz, como por ejemplo la descomposición [LU](./LU.md) or [QR](./QR.md).
+Cuando tenemos un sistema que vamos a necesitar resolverlo muchas veces para distintos términos independientes, es más eficiente encontrar una descomposición de la matriz, como por ejemplo la descomposición LU o QR.
