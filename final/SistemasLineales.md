@@ -101,7 +101,11 @@ Supongamos que $U \in \mathbb{R}^{n \times n}$ es la matriz **triangular superio
 
 Como $U$ es una matriz triangular, si $u_{ii} \neq 0$ para todo $i = 1 \dots n$ podemos despejar cada coordenada de $x$ empezando desde la última hasta la primera, utilizando los resultados previos en cada paso. En este caso **siempre existe solución y es única**. Esto se conoce como **backwards substitution** (sustitución hacia atrás).
 
-Para calcular $x_n$ podemos despejar de forma directa: $x_n = b_n / u_{nn}$.
+Para calcular $x_n$ podemos despejar de forma directa:
+
+$$
+x_n = b_n / u_{nn}
+$$
 
 Yendo hacia atrás, si miramos la ecuación $n-1$ tenemos:
 
