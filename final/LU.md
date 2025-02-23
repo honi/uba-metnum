@@ -57,8 +57,13 @@ a^0_{21} - m_{21} a^0_{11} & \dots & a^0_{2n} - m_{21} a^0_{1n}
 \\
 a^0_{n1} - m_{n1} a^0_{11} & \dots & a^0_{nn} - m_{n1} a^0_{1n}
 \end{bmatrix}
-=
-\begin{bmatrix}
+= A^1
+$$
+
+Notemos que $fila_i(A^1) = fila_i(A^0) - m_{i1} fila_1(A^0)$ para todo $i = 2 \dots n$. Basta tomar $m_{i1} = a^0_{i1} / a^0_{11}$ para colocar ceros debajo de la diagonal en la columna 1 de $A^1$.
+
+$$
+A^1 = \begin{bmatrix}
 a^0_{11} & \dots & a^0_{1n}
 \\
 0 & \dots & a^0_{2n} - m_{21} a^0_{1n}
@@ -67,12 +72,9 @@ a^0_{11} & \dots & a^0_{1n}
 \\
 0 & \dots & a^0_{nn} - m_{n1} a^0_{1n}
 \end{bmatrix}
-= A^1
 $$
 
-Notemos que $fila_i(A^1) = fila_i(A^0) - m_{i1} fila_1(A^0)$ para todo $i = 2 \dots n$. Basta tomar $m_{i1} = a^0_{i1} / a^0_{11}$ para colocar ceros debajo de la diagonal en la columna 1 de $A^1$.
-
-El caso general para el paso $i$-ésimo de la Eliminación Gaussiana tenemos $M^i$ tal que $M^i A^{i-1} = A^i$.
+En el caso general del paso $i$-ésimo de la Eliminación Gaussiana tenemos $M^i$ tal que $M^i A^{i-1} = A^i$.
 
 $$
 M^i = \begin{bmatrix}
@@ -86,9 +88,11 @@ M^i = \begin{bmatrix}
 \\
 \vdots & \vdots & \vdots & \vdots & \ddots & \vdots
 \\
-0 & \dots & -m_{ni} & 0 & \dots & 1
+0 & \dots & \underbrace{-m_{ni}}_{\text{columna } i} & 0 & \dots & 1
 \end{bmatrix}
 $$
+
+Donde $m_{ji} = a^{i-1}_{ji} / a^{i-1}_{ii}$ con $i = 1 \dots n-1$ (la columna donde estamos poniendo los ceros) y $j = i+1 \dots n$.
 
 Todo el método de la Eliminación Gaussiana se codifica como el siguiente producto matricial entre la matriz original $A$ y todas las $M^i$, dando como resultado $U \in \mathbb{R}^{n \times n}$ triangular superior.
 
@@ -104,12 +108,18 @@ $$
 M^i = I - m_i e^t_i
 $$
 
-Donde el vector $m_i \in \mathbb{R}^n$ contiene los multiplicadores del paso $i$-ésimo de la Eliminación Gaussiana.
+Donde el vector $m_i \in \mathbb{R}^n$ contiene los multiplicadores del paso $i$-ésimo de la Eliminación Gaussiana y $e_i$ es el $i$-ésimo vector canónico.
 
 $$
-m_i = \begin{bmatrix}
-0 & \dots & 0 & m_{i+1i} & \dots & m_{ni}
+\begin{align*}
+m_i &= \begin{bmatrix}
+0 & \dots & 0 & 0 & m_{i+1i} & \dots & m_{ni}
 \end{bmatrix}
+\\
+e_i &= \begin{bmatrix}
+0 & \dots & 0 & 1 & 0 & \dots & 0
+\end{bmatrix}
+\end{align*}
 $$
 
 $M^i$ es triangular inferior por construcción. Su determinante es $1$ ya que es el producto de su diagonal, que son todos unos. Luego $M^i$ es inversible. ¿Quién es su inversa?
@@ -136,11 +146,15 @@ $$
 A = (I + m_1 e^t_1 + m_2 e^t_2 + \dots + m_{n-1} e^t_{n-1}) U
 $$
 
-Definimos entonces $L = I + m_1 e^t_1 + m_2 e^t_2 + \dots + m_{n-1} e^t_{n-1}$ matriz triangular inferior con unos en la diagonal y todos los multiplicadores usados durante la triangulación de $A$.
+Definimos entonces $L = I + m_1 e^t_1 + m_2 e^t_2 + \dots + m_{n-1} e^t_{n-1}$ matriz triangular inferior con unos en la diagonal y todos los multiplicadores usados durante la triangulación de $A$. Así obtenemos la factorización $LU$ de $A$.
+
+$$
+A = LU
+$$
 
 ### Complejidad
 
-Obtener la factorización $LU$ cuesta $O(n^3)$ operaciones elementales.
+Obtener la factorización $LU$ cuesta $O(n^3)$ operaciones elementales. En esencia es la misma complejidad que la Eliminación Gaussiana.
 
 ## Propiedades
 
@@ -168,3 +182,5 @@ Ax = b \iff PLUx = b \iff LUx = P^{-1} b
 $$
 
 Notemos que $P^{-1} b$ aplica las permutaciones realizadas durante la Eliminación Gaussiana al término independiente $b$ para que se correspondan las coordenadas de $b$ con las ecuaciones permutadas.
+
+Observación: $P^{-1} = P$ por ser matriz de permutación.
