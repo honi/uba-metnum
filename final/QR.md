@@ -16,6 +16,7 @@ Equivalentemente $Q$ es ortogonal si:
     $$
 
 - Las filas de $Q$ forman un conjunto ortonormal.
+
 - $Q$ vista como una transformación lineal es una rotación o reflexión que preserva la norma 2.
     $$
     ||Qx||_2 = ||x||_2 \iff ||Qx||^2_2 = ||x||^2_2
@@ -27,8 +28,11 @@ Equivalentemente $Q$ es ortogonal si:
 ### Propiedades
 
 - $||Q||_2 = 1$
+
 - $\kappa_2(Q) = 1$ (las matrices ortogonales son estables numéricamente)
+
 - $det(Q) = \pm 1$
+
 - $Q$ y $P$ ortogonales $\Rightarrow QP$ es ortogonal
 
 ## Factorización QR
@@ -245,7 +249,9 @@ El método de Householder consiste en aplicar sucesivas reflexiones para colocar
 Una reflexión se define a partir de un hiper-plano. En el caso de $\mathbb{R}^2$ sería una recta. Sea $H \in \mathbb{R}^{2 \times 2}$ una matriz ortogonal que refleja respecto a la dirección $v$.
 
 - $Hv = v$ pues la propia dirección de reflexión se mantiene constante al aplicar la transformación $H$.
+
 - $Hu = -u$ pues la dirección ortogonal a la dirección de reflexión se invierte al aplicar la transformación $H$ (se puede pensar como que se rota 180°).
+
 - $H \tilde{x} = \tilde{y}$ para cualquier otro caso. El ángulo que se forma entre $\tilde{x}$ y $v$ es exactamente igual al que se forma entre $\tilde{y}$ y $v$.
 
 ### ¿Cómo se construye la matriz $H$?

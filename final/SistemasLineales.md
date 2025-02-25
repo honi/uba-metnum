@@ -45,7 +45,9 @@ La $Im(A)$ son todas las posibles combinaciones lineales de las columnas de $A$.
 Si interpretamos el sistema de ecuaciones de manera geométrica, por ejemplo con $n=2$, tenemos 2 ecuaciones donde cada una define una recta. Lo que buscamos al resolver el sistema es encontrar todos los puntos donde se intersecan dichas rectas. Con esta interpretación, definimos:
 
 - **Sistema incompatible**: no hay solución (las rectas son paralelas sin intersección).
+
 - **Sistema compatible determinado**: hay una única solución (las rectas intersecan en un único punto).
+
 - **Sistema compatible indeterminado**: hay infinitas soluciones (las rectas intersecan en infinitos puntos, son la misma recta).
 
 Esta interpretación se extiende a $\mathbb{R}^n$ donde las ecuaciones definen hiper-planos.
@@ -53,6 +55,7 @@ Esta interpretación se extiende a $\mathbb{R}^n$ donde las ecuaciones definen h
 Para un sistema $Ax = b$ cualquiera:
 
 - Si $b \not\in Im(A)$ entonces el sistema **no** tiene solución.
+
 - Si $b \in Im(A)$ entonces el sistema tiene solución. La solución es única sii las columnas de $A$ son linealmente independientes. En ese caso, la matriz $A$ resulta inversible y por lo tanto $Ax = b \iff x = A^{-1} b$. Hay una biyección entre $x$ y $b$, necesariamente hay un único $x$ tal que $Ax = b$.
 
 ## Sistemas equivalentes
@@ -264,6 +267,7 @@ $$
 Si en el paso $i$-ésimo sucede que $a^{i-1}_{ii} = 0$ quizás podemos continuar con la Eliminación Gaussiana.
 
 - Si la columna $i$ ya tiene todo ceros debajo de la diagonal, es decir $a^{i-1}_{ji} = 0$ para todo $j = i+1 \dots n$, entonces no hace falta operar con las filas y podemos avanzar al siguiente paso.
+
 - Caso contrario, si existe algún $a^{i-1}_{ji} \neq 0$ con $j > i$ podemos permutar la fila $i$ con la $j$ y continuar con la Eliminación Gaussiana.
 
 ### Pivoteo

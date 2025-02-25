@@ -161,8 +161,11 @@ Obtener la factorización $LU$ cuesta $O(n^3)$ operaciones elementales. En esenc
 Sea $A \in \mathbb{R}^{n \times n}$.
 
 - Si $A$ es inversible y tiene factorización $LU$, entonces es única.
+
 - Si todas las submatrices principales de $A$ son inversibles, entonces tiene factorización $LU$.
+
 - Si $A$ es estrictamente diagonal dominante, entonces tiene factorización $LU$.
+
 - No toda matriz tiene factorización $LU$.
 
 # Factorización PLU
