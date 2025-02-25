@@ -129,4 +129,49 @@ A efectos prácticos de la materia nos enfocamos en matrices con coeficientes re
 
 ## Método de la potencia
 
+Para poder obtener los autovalores y autovectores asociados podemos utilizar un método iterativo llamado método de la potencia.
+
+Sean $A \in \mathbb{R}^{n \times n}$, $\lambda_1 \dots \lambda_n \in \mathbb{R}$ sus $n$ autovalores y $v_1 \dots v_n \in \mathbb{R}^n$ los autovectores asociados que forman una base.
+
+Sin pérdida de generalidad supongamos que ordenamos los autovalores tal que $|\lambda_1| > |\lambda_2| \geq \dots \geq |\lambda_n|$.
+
+A partir de un vector arbitrario inicial $x_0 \in \mathbb{R}^n$ tal que $||x_0||_2 = 1$ definimos la sucesión $\{x_k\}$ como:
+
+$$
+x_k = \frac{A x_{k-1}}{||A x_{k-1}||_2}
+$$
+
+Dicha sucesión converge al autovector $v_1$. Para obtener el autovalor realizamos la siguiente cuenta:
+
+$$
+A v_1 = \lambda_1 v_1 \iff v_1^t A v_1 = \lambda_1 v_1^t v_1 \iff v_1^t A v_1 = \lambda_1 \underbrace{||v_1||^2_2}_{=1} \iff v_1^t A v_1 = \lambda_1
+$$
+
+Dado que los autovectores forman una base, si consideramos a $x_k$ como una combinación lineal de los autovectores, la idea del método es que en cada iteración se "acentúa" la dirección del autovector $v_1$ pues $\lambda_1$ es el autovalor más grande en módulo. Al normalizar $x_k$ para la siguiente iteración, los coeficientes que acompañan a los autovectores $v_2 \dots v_n$ tienden a $0$. Después de una cantidad lo suficientemente grande de iteraciones y gracias a la aritmética finita el único coeficiente que sobrevive es el que acompaña a $v_1$.
+
+Generalmente se configura un máximo de iteraciones y también se puede incluir una condición de corte temprano que consiste en ver si la distancia (medida con alguna norma) entre $x_k$ y $x_{k-1}$ es menor que algún umbral. En tal caso se considera $x_k$ como suficientemente bueno y no es necesario realizar más iteraciones.
+
+Hay que mencionar que existe una probabilidad no nula (pero muy baja) de que el $x_0$ inicial elegido de manera arbitraria justo tenga un coeficiente $\approx 0$ acompañando al autovector $v_1$ si consideramos a $x_0$ como combinación lineal de los autovectores. En este caso el método puede no converger o necesitar una cantidad excesivamente grande de iteraciones para hacerlo. Una solución consiste simplemente en reintentar el método con un nuevo $x_0$ inicial.
+
 ## Método de deflación
+
+Utilizando el método de la potencia encontramos $\lambda_1$ y $v_1$. ¿Cómo podemos encontrar todos los autovalores y autovectores? Como ya sabemos obtener el autovalor más grande en módulo, el método de deflación consiste en obtener una nueva matriz donde el autovalor $\lambda_1$ pasó a ser el más chico y repetir así el método de la potencia sobre esta nueva matriz, hayando el nuevo autovalor más grande en módulo que será $\lambda_2$.
+
+Sean $A \in \mathbb{R}^{n \times n}$, $\lambda_1 \in \mathbb{R}$ autovalor con autovector asociado $v_1 \in \mathbb{R}^n$ tal que $|\lambda_1| > |\lambda_2| \geq \dots \geq |\lambda_n|$..
+
+Sea $H \in \mathbb{R}^{n \times n}$ matriz ortogonal tal que $H v_1 = e_1$.
+
+$$
+H A H^t = \begin{bmatrix}
+\lambda_1 & a^t \\
+0 & \tilde{A}
+\end{bmatrix}
+$$
+
+Notemos que $A$ y $H A H^t$ tienen los mismos autovalores. Si planteamos el polinomio característico de $H A H^t$ obtenemos:
+
+$$
+det(H A H^t - \lambda I) = (\lambda_1 - \lambda) * det(\tilde{A} - \lambda I)
+$$
+
+Entonces el resto de los autovalores de $A$: $\lambda_2 \dots \lambda_n$ son autovalores de $\tilde{A}$. Para encontrar el resto de los autovalores (o la cantidad que se necesite) simplemente repetimos el método de la potencia sobre esta nueva matriz $\tilde{A}$ para encontrar $\lambda_2$. Luego volvemos a aplicar la deflación y así sucesivamente.
