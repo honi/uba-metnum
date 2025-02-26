@@ -14,10 +14,11 @@ $$
 Av = \lambda v \iff Av - \lambda v = 0 \iff (A - \lambda I) v = 0
 $$
 
-Como $v \neq 0$, la igualdad solo se cumple si:
+
+Esto nos dice que $v \in Nu(A - \lambda I)$, y como $v \neq 0$ necesariamente vale que:
 
 $$
-v \in Nu(A - \lambda I) \iff Nu(A - \lambda I) \neq \{0\} \iff A \text{ no inversible} \iff det(A - \lambda I) = 0
+Nu(A - \lambda I) \neq \{0\} \iff A - \lambda I \text{ no inversible} \iff det(A - \lambda I) = 0
 $$
 
 Al desarrollar la fórmula del determinante obtenemos el **polinomio característico** de la matriz: $P(\lambda) = det(A - \lambda I)$. Luego $\lambda$ es autovalor de $A$ sii $\lambda$ es raíz de $P(\lambda)$.
