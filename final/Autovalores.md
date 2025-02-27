@@ -124,9 +124,11 @@ A efectos prácticos de la materia nos enfocamos en matrices con coeficientes re
 
     - Todos sus autovalores están en $\mathbb{R}$.
 
-    - Si todos los autovalores son distintos entonces los autovectores son ortogonales entre sí. Luego forman una base ortonormal de $\mathbb{R}^{n}$ si los normalizamos.
+    - Si $\lambda_1 \neq \lambda_2$ son autovalores de $A$ entonces sus autovectores asociados $v_1$ y $v_2$ son ortogonales entre sí.
 
     - Existen $Q, D \in \mathbb{R}^{n \times n}$ con $Q$ ortogonal y $D$ diagonal tal que $A = Q D Q^t$. Las columnas de $Q$ son los autovectores de $A$ y $D$ contiene todos los autovalores de $A$.
+
+    - Los autovectores forman una base ortonormal.
 
 ## Método de la potencia
 
