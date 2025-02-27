@@ -154,4 +154,4 @@ La matriz $V^t$ realiza un cambio de base mediante una rotación, en donde los a
 
 ## Aplicaciones
 
-PCA
+La descomposición SVD cuantifica en los valores singulares las características de la matriz original, ya sea una transformación lineal o una matriz que representa un dataset. ¿Qué pasa si descartamos algunos valores singulares? Esto es justamente lo que hace el algoritmo de PCA. Al quedarnos solo con los valores singulares más grandes, podemos reducir la dimensión de la matriz original y aún así preservar las características más importantes. Reducir la dimensión significa menos espacio de memoria y/o tiempo de cómputo más rápido.
