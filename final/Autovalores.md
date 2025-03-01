@@ -46,7 +46,7 @@ Si sucede que $m_G(\lambda) = m_A(\lambda)$ para todos los autovalores, entonces
 Se define el radio espectral de $A$ como:
 
 $$
-\rho(A) = max \{ |\lambda| : \lambda \text{ es autovalor de } A \}
+\rho(A) = \max \{ |\lambda| : \lambda \text{ autovalor de } A \}
 $$
 
 El radio espectral cuantifica la máxima deformación que realiza la transformación $A$ en alguna dirección. Algunos casos de uso del radio espectral son:

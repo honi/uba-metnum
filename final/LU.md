@@ -111,16 +111,15 @@ $$
 Donde el vector $m_i \in \mathbb{R}^n$ contiene los multiplicadores del paso $i$-ésimo de la Eliminación Gaussiana y $e_i$ es el $i$-ésimo vector canónico.
 
 $$
-\begin{array}{ll}
-m_i & = \begin{bmatrix}
+\begin{aligned}
+m_i &= \begin{bmatrix}
 0 & \dots & 0 & 0 & m_{i+1i} & \dots & m_{ni}
 \end{bmatrix}
 \\
-\\
-e_i & = \begin{bmatrix}
+e_i &= \begin{bmatrix}
 0 & \dots & 0 & 1 & 0 & \dots & 0
 \end{bmatrix}
-\end{array}
+\end{aligned}
 $$
 
 $M^i$ es triangular inferior por construcción. Su determinante es $1$ ya que es el producto de su diagonal, que son todos unos. Luego $M^i$ es inversible. ¿Quién es su inversa?
