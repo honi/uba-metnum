@@ -83,7 +83,7 @@ $$
 \min_{x \in \mathbb{R}^n} ||Ax - b||^2_2
 $$
 
-## ¿Cómo encontramos la solución?
+## Existencia de la solución
 
 Para encontrar la solución nos apoyamos en que $Im(A) \oplus Nu(A^t) = \mathbb{R}^m$. Esto significa que cualquier vector de $\mathbb{R}^m$ podemos escribirlo como una suma directa de 2 vectores, uno de $Im(A)$ y otro de $Nu(A^t)$. En particular vamos a descomponer el vector $b \in \mathbb{R}^m$ como $b = b^1 + b^2$, donde $b^1 \in Im(A)$ y $b^2 \in Nu(A^t)$.
 
@@ -123,25 +123,30 @@ Concluimos que $Ax^\ast = b^1$ es la solución al problema de CML. Como estamos 
 
 Si bien logramos caracterizar la solución al problema de CML, nos gustaría poder plantearlo en términos de los datos originales $A$ y $b$.
 
-Sea $x^\ast$ solución al problema de CML, y recordemos que $b = b^1 + b^2$ con $b^1 \in Im(A)$ y $b^2 \in Nu(A^t)$.
+Recordemos que $b = b^1 + b^2$ con $b^1 \in Im(A)$ y $b^2 \in Nu(A^t)$.
 
 $$
-b = b^1 + b^2 \iff b^1 = b - b^2 \\
+b = b^1 + b^2 \iff b^1 = b - b^2
+$$
+
+Sea $x^\ast$ solución al problema de CML.
+
+$$
 A x^\ast = b^1 \iff A x^\ast = b - b^2 \iff b^2 = b - A x^\ast
 $$
 
 Como $b^2 \in Nu(A^t)$ tenemos que:
 
 $$
-A^t b^2 = A^t (b - A x^\ast) = 0 \iff A^t A x^\ast = A^t b
+A^t b^2 = A^t (b - A x^\ast) = 0 \iff \underbrace{A^t A x^\ast = A^t b}_{\text{ecuaciones normales}}
 $$
 
 De esta forma logramos caracterizar el problema en función de los datos originales. Notemos que la matriz $A^t A$ es simétrica semi definida positiva, o definida positiva si $A$ tiene rango máximo. Podemos resolver el sistema planteado con cualquiera de las técnicas vistas como la factorización de Cholesky.
 
 No obstante, la matriz $A^t A$ puede estar mal condicionada y generar soluciones inestables. Pequeños cambios en $b$ producen grandes cambios en la solución $x^\ast$. Para intentar remediar esto podemos buscar otra formulación de la solución mediante la factorización $QR$ o $SVD$ en donde no necesitemos usar la matriz $A^t A$.
 
+## Error
+
 ## Resolución usando $QR$
 
 ## Resolución usando $SVD$
-
-## Error
