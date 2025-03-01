@@ -15,7 +15,7 @@ Una matriz $A \in \mathbb{R}^{n \times n}$ es **simétrica definida positiva** (
 Las matrices SDP tienen varias propiedades muy convenientes.
 
 - A es inversible. \
-    Si $A$ no fuese inversible entonces existe $x \in \mathbb{R}^n$, $x \neq 0$ tal que $Ax = 0$. Luego $x^t A x = x^t 0 = 0 \not\gt 0$. \
+    Si $A$ no fuese inversible entonces existe $x \in \mathbb{R}^n$, $x \neq 0$ tal que $Ax = 0$. Luego $x^t A x = x^t 0 = 0 \not > 0$. \
     Absurdo pues $A$ es SDP.
 
 - $a_{ii} > 0$ para todo $i = 1 \dots n$. \

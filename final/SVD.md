@@ -38,19 +38,21 @@ $$
 Realizamos el siguiente desarrollo para encontrar una relación entre las distintas matrices y los valores singulares $\sigma_1 \dots \sigma_r$.
 
 $$
-\begin{align*}
+\begin{array}{r}
 A = U \Sigma V^t \iff AV = U \Sigma \iff
-&\begin{cases}
-A v_i = \sigma_i u_i & i = 1 \dots r & \hspace{1.6em} (1)\\
+\Bigg\{
+\begin{array}{llr}
+A v_i = \sigma_i u_i & i = 1 \dots r & \hspace{1.6em} (1) \\
 A v_i = 0 & i = r+1 \dots n & \hspace{1.6em} (2)
-\end{cases}
+\end{array}
 \\
 A = U \Sigma V^t \iff U^t A = \Sigma V^t \iff A^t U = V \Sigma^t \iff
-&\begin{cases}
+\Bigg\{
+\begin{array}{llr}
 A^t u_i = \sigma_i v_i & i = 1 \dots r & \hspace{1em} (3) \\
 A^t u_i = 0 & i = r+1 \dots m & \hspace{1em} (4)
-\end{cases}
-\end{align*}
+\end{array}
+\end{array}
 $$
 
 ### ¿Quiénes son los $v_i$?
@@ -101,7 +103,7 @@ $$
 u_i^t u_j
 = \frac{1}{\sigma_i} (A v_i)^t \frac{1}{\sigma_j} A v_j
 = \frac{1}{\sigma_i \sigma_j} v_i^t A^t A v_j
-\stackrel{\mathclap{\substack{v_j \text{ autovector de } A^t A \\ \Big\uparrow}}}{=}
+\stackrel{\mathclap{\substack{v_j \text{ autovector de } A^t A \hspace{3em} \\ \Big\uparrow}}}{=}
 \frac{\lambda_j}{\sigma_i \sigma_j} v_i^t v_j
 \stackrel{\mathclap{\substack{v_i \perp v_j \\ \Big\uparrow}}}{=}
 0
@@ -111,7 +113,7 @@ $$
 u_i^t u_i
 = \frac{1}{\sigma_i} (A v_i)^t \frac{1}{\sigma_i} A v_i
 = \frac{1}{\sigma_i \sigma_i} v_i^t A^t A v_i
-\stackrel{\mathclap{\substack{v_i \text{ autovector de } A^t A \\ \Big\uparrow}}}{=}
+\stackrel{\mathclap{\substack{v_i \text{ autovector de } A^t A \hspace{3em} \\ \Big\uparrow}}}{=}
 \frac{\lambda_i}{\sigma_i \sigma_i} v_i^t v_i
 \stackrel{\mathclap{\substack{||v_i||^2_2 = 1 \\ \Big\uparrow}}}{=}
 \frac{\lambda_i}{\sigma_i \sigma_i}
@@ -139,7 +141,7 @@ Es fácil verificar que si construimos $U$, $\Sigma$ y $V$ a partir de estas def
 
 La descomposición SVD tiene una interpretación geométrica muy interesante. Cada matriz $U$, $\Sigma$ y $V$ cumple una función específica.
 
-<img src="./assets/svd.png" height="200">
+![](./assets/svd.png){height=200px}
 
 La matriz $V^t$ realiza un cambio de base mediante una rotación, en donde los autovectores $v_i$ quedan alineados con los vectores canónicos $e_i$. Luego la matriz $\Sigma$ expande o contrae el espacio sobre cada uno de los vectores canónicos. Finalmente la matriz $U$ realiza otro cambio de base mediante una rotación.
 

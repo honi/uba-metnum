@@ -1,5 +1,7 @@
 # Final de Métodos Numéricos
 
+[PDF](./MetNumFinal.pdf) compilado con todos los temas.
+
 ### Temas
 
 1. [Sistemas Lineales](SistemasLineales.md)

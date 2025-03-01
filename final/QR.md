@@ -57,7 +57,7 @@ El método de Givens consiste en realizar una serie de rotaciones en un subespac
 
 ### Rotaciones en el plano
 
-<img src="./assets/qr-givens-1.png" width="160">
+![](./assets/qr-givens-1.png){width=160px}
 
 Sea $W \in \mathbb{R}^{2 \times 2}$ una matriz ortogonal que rota cualquier vector una cantidad $\theta$ de grados en sentido horario.
 
@@ -70,7 +70,7 @@ $$
 
 La matriz $W$ codifica una rotación para un cierto ángulo $\theta$ el cual está fijo. Es decir, $W$ rota **cualquier** vector siempre por el mismo ángulo. Sin embargo, no nos interesa definir explícitamente el ángulo $\theta$. En cambio, queremos definir $W$ a partir de un vector en particular y hacia dónde lo queremos rotar, con el objetivo final de triangular una matriz de $2 \times 2$.
 
-<img src="./assets/qr-givens-2.png" width="160">
+![](./assets/qr-givens-2.png){width=160px}
 
 Dado $\tilde{x} \in \mathbb{R}^2$, queremos construir la matriz de rotación $W \in \mathbb{R}^{2 \times 2}$ para que rote al vector $\tilde{x}$ lo necesario para dejarlo "apoyado sobre el eje x". Es decir, $W \tilde{x} = \tilde{y}$ con $\tilde{y} \in \mathbb{R}^2$, $\tilde{y} = (||\tilde{x}||_2, 0)$.
 
@@ -244,7 +244,7 @@ El método de Householder consiste en aplicar sucesivas reflexiones para colocar
 
 ### ¿Qué es una reflexión?
 
-<img src="./assets/qr-householder-1.png" width="160">
+![](./assets/qr-householder-1.png){width=160px}
 
 Una reflexión se define a partir de un hiper-plano. En el caso de $\mathbb{R}^2$ sería una recta. Sea $H \in \mathbb{R}^{2 \times 2}$ una matriz ortogonal que refleja respecto a la dirección $v$.
 
@@ -296,7 +296,7 @@ Finalmente tenemos $H = I - 2 u u^t$ con $H$ simétrica y ortogonal. Este mismo 
 
 ### ¿Cómo podemos obtener $H$ a partir de $\tilde{x}$ e $\tilde{y}$?
 
-<img src="./assets/qr-householder-2.png" width="160">
+![](./assets/qr-householder-2.png){width=160px}
 
 Sean $\tilde{x}, \tilde{y} \in \mathbb{R}^n$ tal que $\tilde{x} \neq \tilde{y}$, $||\tilde{x}||_2 = ||\tilde{y}||_2$ (necesitamos que tengan la misma norma pues si no $H$ no podría ser ortogonal ya que estaría deformando el espacio además de reflejarlo). Por lo expuesto anteriormente existe $H \in \mathbb{R}^{n \times n}$ transformación de Householder tal que $H \tilde{x} = \tilde{y}$.
 

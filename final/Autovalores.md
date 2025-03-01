@@ -70,7 +70,7 @@ Si $M = D_{i_1} \cup D_{i_2} \cup \dots \cup D_{i_m}$ es disjunto respecto al re
 
 ### Ejemplos
 
-<img src="./assets/autovalores-discos-1.png" width="320">
+![](./assets/autovalores-discos-1.png){width=320px}
 
 Sean $D_1$ (azul), $D_2$ (rojo) y $D_3$ (verde) los discos de alguna matriz $A \in \mathbb{C}^{3 \times 3}$.
 
@@ -78,7 +78,7 @@ En $M_1 = D_1 \cup D_2$ tenemos 2 autovalores ya que $M_1 \stackrel{D}{\cup} D_3
 
 En $M_2 = D_3$ tenemos 1 autovalor ya que $M_2 \stackrel{D}{\cup} (D_1 \cup D_2)$.
 
-<img src="./assets/autovalores-discos-2.png" width="320">
+![](./assets/autovalores-discos-2.png){width=320px}
 
 Si fuese el caso donde todos los $D_i$ son disjuntos, entonces en cada disco habría un único autovalor, y por lo tanto la multiplicidad algebraica de cada autovalor sería 1, dando lugar a $n$ autovalores distintos.
 
