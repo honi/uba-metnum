@@ -42,7 +42,7 @@ $$
 
 ## Cota del error
 
-Como mencionamos antes, tenemos una forma de acotar el error para una determinada cantidad de iteraciones del método. Esto nos permite determinar la cantidad de iteraciones que vamos a realizar en una implementación para garantizar que la solución es lo suficientemente buena para el contexto de uso.
+Como mencionamos antes, tenemos una forma de acotar el error para una determinada cantidad de iteraciones del método. Esto nos permite determinar la cantidad de iteraciones que necesitamos para garantizar que la solución sea lo suficientemente buena para el contexto de uso.
 
 Sea $T \in \mathbb{R}^{n \times n}$ la matriz de iteración del método tal que $||T|| < 1$ para alguna norma inducida. El error de la solución obtenida está acotada por:
 
