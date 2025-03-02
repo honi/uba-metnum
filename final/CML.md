@@ -154,8 +154,10 @@ Sea $A \in \mathbb{R}^{m \times n}$ con $rango(A) = n$. Sean $b,\tilde{b} \in \m
 Como $rango(A^t A) = rango(A) = n$ la matriz $A^t A$ resulta inversible. De las ecuaciones normales podemos deducir:
 
 $$
-A^t A x^\ast = A^t b \iff x^\ast = (A^t A)^{-1} A^t b \\
-A^t A \tilde{x}^\ast = A^t \tilde{b} \iff \tilde{x}^\ast = (A^t A)^{-1} A^t \tilde{b} \\
+\begin{aligned}
+A^t A x^\ast = A^t b & \iff x^\ast = (A^t A)^{-1} A^t b \\
+A^t A \tilde{x}^\ast = A^t \tilde{b} & \iff \tilde{x}^\ast = (A^t A)^{-1} A^t \tilde{b} \\
+\end{aligned}
 $$
 
 Si $b^1 \neq 0$ entonces podemos analizar la estabilidad del sistema mediante la siguiente desigualdad:
