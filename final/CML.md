@@ -260,7 +260,7 @@ Basta con elegir valores arbitrarios para $y^{n-r}$ y luego $y^r$ queda unívoca
 
 De forma similar podemos resolver el problema de CML usando la descomposición en valores singulares.
 
-Dada una matriz $A \in \mathbb{R}^{m \times n}$ con $rango(A) = r$ existen $U \in \mathbb{R}^{m \times m}$ matriz ortogonal, $\Sigma \in \mathbb{R}^{m \times n}$ y $V \in \mathbb{R}^{n \times n}$ matriz ortogonal tales que $A = U \Sigma V^t$. La matriz $\Sigma$ como es usual tiene en su diagonal los $r$ valores singulares no nulos ordenados de mayor a menor: $\sigma_1 \geq \dots \geq \sigma_r > 0$.
+Dada una matriz $A \in \mathbb{R}^{m \times n}$ con $rango(A) = r$ existen $U \in \mathbb{R}^{m \times m}$ matriz ortogonal, $\Sigma \in \mathbb{R}^{m \times n}$ y $V \in \mathbb{R}^{n \times n}$ matriz ortogonal tales que $A = U \Sigma V^t$.
 
 Veamos cómo usar esta factorización para resolver el problema de CML.
 
@@ -271,25 +271,49 @@ $$
 \min_{x \in \mathbb{R}^n} || \underbrace{U^t}_{\mathclap{\text{preserva la norma } 2}}(Ax - b) ||_2^2
 \\ &=
 \min_{x \in \mathbb{R}^n} || U^tAx - U^tb ||_2^2
-\\ & \stackrel{(*)}{=}
+\\ &=
 \min_{x \in \mathbb{R}^n} || \Sigma V^t x - U^tb ||_2^2
+\\ & \underset{\mathclap{\substack{\big\downarrow \\ y = V^t x}}}{=}
+\min_{y \in \mathbb{R}^n} || \Sigma y - U^tb ||_2^2
 \end{aligned}
+$$
+
+Llamamos $U^tb = (b^r, b^{m-r})$ e $y = (y^r, y^{n-r})$.
+
+Sea $\Sigma^r \in \mathbb{R}^{r \times r}$ la submatriz de $\Sigma$ con las primeras $r$ filas y columnas. $\Sigma^r$ es una matriz diagonal inversible pues contiene los $r$ valores singulares no nulos en su diagonal.
+
+$$
+\min_{x \in \mathbb{R}^n} || Ax - b ||_2^2
+=
+\min_{y \in \mathbb{R}^n} || \Sigma y - U^tb ||_2^2
+=
+\min_{y \in \mathbb{R}^n} \big( || \Sigma^r y^r - b^r ||_2^2 + || b^{m-r} ||_2^2 \big)
 $$
 
 ### Caso $A$ tiene columnas LI
 
-Entonces $r = n$ y $\Sigma = \begin{bmatrix} \tilde{\Sigma} \\ 0 \end{bmatrix}$ con $\tilde{\Sigma} \in \mathbb{R}^{n \times n}$ matriz diagonal con los $n$ valores singulares no nulos y por lo tanto inversible. Llamamos $U^tb = (b^n, b^{m-n})$.
+Entonces $r = n$ e $y = y^n$.
 
 $$
-\begin{aligned}
 \min_{x \in \mathbb{R}^n} || Ax - b ||_2^2
-\stackrel{(*)}{=}
-\min_{x \in \mathbb{R}^n} || \Sigma V^t x - U^tb ||_2^2
-\underset{\mathclap{\substack{\big\downarrow \\ y = V^t x}}}{=}
-\min_{y \in \mathbb{R}^n} \big( || \tilde{\Sigma} y - b^n ||_2^2 + || b^{m-n} ||_2^2 \big)
-\end{aligned}
+=
+\min_{y \in \mathbb{R}^n} \big( || \Sigma^n y - b^n ||_2^2 + || b^{m-n} ||_2^2 \big)
 $$
 
-El segundo término es constante y el primero por ser norma como mínimo vale $0$. Dado que $\tilde{\Sigma}$ es inversible podemos afirmar que existe un único $y$ tal que $\tilde{\Sigma} y = b^n$. Luego se alcanza el mínimo con este $y$ y la solución al problema de CML se obtiene recordando que $y = V^t x$.
+El segundo término es constante y el primero por ser norma como mínimo vale $0$. Dado que $\Sigma^n$ es inversible podemos afirmar que existe un único $y$ tal que $\Sigma^n y = b^n$. Basta tomar $y_i = b^n_i / \sigma_i$ para todo $i = 1 \dots n$.
+
+Luego se alcanza el mínimo con este $y$ y la solución al problema de CML se obtiene recordando que $y = V^t x$.
 
 ### Caso $A$ tiene columnas LD
+
+Entonces $r < n$.
+
+$$
+\min_{x \in \mathbb{R}^n} || Ax - b ||_2^2
+=
+\min_{y \in \mathbb{R}^n} \big( || \Sigma^r y^r - b^r ||_2^2 + || b^{m-r} ||_2^2 \big)
+$$
+
+El segundo término es constante y el primero por ser norma como mínimo vale $0$. Dado que $\Sigma^r$ es inversible podemos afirmar que existe un único $y^r$ tal que $\Sigma^r y^r = b^r$. Basta tomar $y_i = b^n_i / \sigma_i$ para todo $i = 1 \dots r$. El resto de las $n-r$ coordenadas de $y$ no afectan a la norma pues se anulan con los ceros de $\Sigma$. Podemos elegir valores arbitrarios para $y_{r+1} \dots y_n$.
+
+Luego se alcanza el mínimo con este $y$ y la solución al problema de CML se obtiene recordando que $y = V^t x$.
