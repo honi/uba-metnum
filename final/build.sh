@@ -4,6 +4,7 @@ pandoc \
     -H <(echo '\usepackage{mathtools}') \
     -V geometry:margin=1in \
     -o MetNumFinal.pdf \
+    Intro.md \
     SistemasLineales.md \
     LU.md \
     Normas.md \
